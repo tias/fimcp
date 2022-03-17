@@ -126,14 +126,14 @@ AC_ARG_VAR([GECODE_INCLUDES], [DIR location of Gecode header files for inclusion
 AC_ARG_VAR([GECODE_LIBRARIES], [DIR location of Gecode library files for linking (gecode will not be build if this variable is set)])
 AS_IF([test "x$GECODE_INCLUDES" = x], [
     build_gecode="yes"
-    GECODE_INCLUDES="../lib/gecode-3.7.1"
+    GECODE_INCLUDES="../lib/gecode-release-3.7.3"
 ],[
     build_gecode="no"
     AS_IF([test "x$GECODE_LIBRARIES" = x], [GECODE_LIBRARIES="$GECODE_INCLUDES"])
 ])
 AS_IF([test "x$GECODE_LIBRARIES" = x], [
     build_gecode="yes"
-    GECODE_LIBRARIES="../lib/gecode-3.7.1"
+    GECODE_LIBRARIES="../lib/gecode-release-3.7.3"
 ],[
     AS_IF([test "x$build_gecode" = xyes], [GECODE_INCLUDES="$GECODE_LIBRARIES"])
     build_gecode="no"

@@ -4,10 +4,15 @@ http://dtai.cs.kuleuven.be/CP4IM/
 
 Compiling, no gecode installed yet:
 ===================================
-./configure
+./configure --disable-gist
 make
 
 This will automatically download and compile gecode with the correct flags, as well as compile cimcp against this gecode codebase.
+
+
+If gecode fails to compile with
+"./gecode/gist/textoutput.hh:41:10: fatal error: QMainWindow: No such file or directory"
+then make sure you used `./configure --disable-gist`
 
 
 Compiling, with gecode installed:

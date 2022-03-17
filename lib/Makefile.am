@@ -22,8 +22,8 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
 #
-GECODE_VERSION=gecode-3.7.1
-GECODE_DIR=$(GECODE_VERSION)/
+GECODE_VERSION=release-3.7.3
+GECODE_DIR=gecode-$(GECODE_VERSION)/
 
 all-local: gecode
 
@@ -35,7 +35,7 @@ else
 GECODE_CONFIG_GIST = --disable-qt --disable-gist
 endif
 	if test ! -d $(GECODE_DIR); then \
-		wget http://www.gecode.org/download/$(GECODE_VERSION).tar.gz && \
+		wget https://github.com/Gecode/gecode/archive/refs/tags/$(GECODE_VERSION).tar.gz && \
 		tar -xzvf $(GECODE_VERSION).tar.gz && \
 		rm $(GECODE_VERSION).tar.gz; \
 		cd $(GECODE_DIR) && ./configure\
