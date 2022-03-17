@@ -1,0 +1,27 @@
+This is fimcp, frequent and constraint-based itemset mining using Constraint Programming
+http://dtai.cs.kuleuven.be/CP4IM/
+
+
+Compiling, no gecode installed yet:
+===================================
+./configure
+make
+
+This will automatically download and compile gecode with the correct flags, as well as compile cimcp against this gecode codebase.
+
+
+Compiling, with gecode installed:
+===================================
+add 'GECODE_LIBRARIES=...' and point it to your gecode source, e.g.:
+
+./configure GECODE_LIBRARIES=/home/tias/local/src/gecode-3.7.1
+make
+
+if you installed the source files and the libraries in separate places, specify them separately, e.g.:
+./configure GECODE_INCLUDES=/home/tias/local/src/gecode-3.7.1 GECODE_LIBRARIES=/home/tias/local/lib
+
+For more advanced setups, see ./configure --help
+
+
+The actual code is in the src/ directory,
+After compiling, read src/README.

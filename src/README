@@ -1,0 +1,51 @@
+FIM_CP code
+===========
+Detailed instructions can be found at:
+http://www.cs.kuleuven.be/~dtai/CP4IM/fim_cp.php
+
+Publications:
+    - L. De Raedt, T. Guns, S. Nijssen. Constraint programming for itemset mining, KDD 2008.
+    - T. Guns, S. Nijssen, L. De Raedt. Itemset mining: A constraint programming perspective, Artificial Intelligence 175(12-13), 2011.
+
+
+Input:
+   The dataset has to be in annotated transaction format, optionally with labels: every line is one transaction. A transaction is a space-separated list of item identifiers (offset 0). If for every transaction the last item is either 1 or 0, it represents the class label.
+  A cost attribute file consists of space separated costs, one cost for every item.
+
+Running:
+  Warning: The gecode libraries must be in your $LD_LIBRARY_PATH (eg. export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/tias/local/lib")
+
+Every model has a separate binary, run it with the -help switch for detailed explanations and a usage example.
+  For example, ./fimcp_standard -help tells us:
+...
+Specific options for ./fimcp_standard:
+    -output (none, normal, cpvars) default: normal
+        type of output of solutions
+          none: do not output solutions
+          normal: print solutions (FIMI-style)
+          cpvars: print the CP variables of the solutions)
+    -cclause (unsigned int) default: 1
+        coverage constraint using clause ?
+    -datafile (filename with extention) default: ../data/example.txt
+        filename of dataset to use (any name)
+    -solfile (filename with extention) default: 
+        filename to write solutions to (any name)
+    -freq (floating point value) default: 0.1
+        frequency (>1 is absolute, <1 is percentage, eg 0.10 is 10%)
+Description:
+    This model finds standard frequent patterns (eg. having minimal frequency)
+Usage example:
+    ./fimcp_standard -datafile example.txt -freq 0.10
+
+
+Modifying:
+  One can create his own model by copying a model (for example fimcp_closed.cpp) and adding or changing constraints. In each model, the constraints are written as self-sustaining blocks, so each constraint can be copy-pasted into another model as is. FIM_CP is fully compatible with CIMCP, so its correlation constraints can also be added to the models.
+  To compile the new model, add it to the bottom of the Makefile.am file and rerun ../configure.
+
+
+For questions or bugreports, mail:
+tias.guns@cs.kuleuven.be
+
+
+Gecode:
+  For an introduction to gecode, read the excellent 'modeling with gecode' http://www.gecode.org/doc-latest/modeling.pdf

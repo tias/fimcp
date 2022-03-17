@@ -1,0 +1,4 @@
+- make default print help (if empty cmd, or no datafile)
+- -output full upstream
+- merge OUTPUT_ and PRINT_ ? is identical... (by design)
+

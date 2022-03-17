@@ -1,0 +1,32 @@
+== FIM_CP 2.7, 2011-11-12 ==
+    First official release with the new build system
+
+    + Now automatically downloads and compiles Gecode (or point it to an existing install)
+    + configures our code with the same parameters
+    + Some changes to make the code work under windows
+    + Compatible with gecode 3.7.1 (and lower, and probably higher too)
+
+== FIM_CP 2.1, 2009-12-17 ==
+    Release with Mac support, minor changes
+    + Tested on Mac: needed -lgecodesupport in the Makefile
+    + Support for gecode 3.2.2
+        - should be slightly more efficient because of better propagator for linear sum of booleans
+        - API change for constraint_linearPlus affected more/fimcp_standardPlus and more/fimcp_closedPlus
+    + New print option: --print full, prints items and transactions
+    + Some cleanups in the common/ files
+
+== FIM_CP 2.0, 2009-07-12 ==
+    Drastically changed release
+    + Support for gecode 3.1.0 (including new linear propagator for boolean constraints, new support functions and parallell search)
+    + New data format: annotated transaction format with labels: a combination of the FIMI format with annotations like the ARFF format.
+    + Improved output options
+    + Native support for class labels
+    + Code cleanups, each constraint is a self-sustaining copy-pasteble block
+
+== FIM_CP 1.1, 2008-08-07 ==
+    Release for gecode 2.2.0
+    + added GIST support
+    + default -c-d 0 -branchval max (less memory, sometimes faster)
+
+== FIM_CP 1.0, 2008-08-07 ==
+    Initial release
